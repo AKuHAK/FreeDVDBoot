@@ -28,10 +28,10 @@ jobs:
         ./build.sh
 
     - name: Generate iso
-      run: genisoimage -udf -o exploit.iso ${{ matrix.version }}
+      run: genisoimage -udf -o "exploit_${{ matrix.version }}.iso" "Filesystems/${{ matrix.version }}"
       continue-on-error: true
 
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ matrix.version }}
-        path: exploit.iso
+        path: "exploit_${{ matrix.version }}.iso"
