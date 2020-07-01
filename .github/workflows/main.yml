@@ -23,6 +23,7 @@ jobs:
     - name: Build
       working-directory: "PAYLOADS/PAYLOAD_${{ matrix.version }}"
       run: |
+        ls -l
         chmod +x build.sh
         ./build.sh
 
