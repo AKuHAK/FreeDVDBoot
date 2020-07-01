@@ -21,7 +21,7 @@ jobs:
       run: sudo apt-get install genisoimage
   
     - name: Build
-      working-directory: "PAYLOADS/PAYLOAD_${{ matrix.version }}"
+      working-directory: "PAYLOADS/PAYLOAD ${{ matrix.version }}"
       run: |
         ls -l
         chmod +x build.sh
